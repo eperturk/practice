@@ -1,0 +1,11 @@
+problem2.txt
+
+included in this folder is an html file called wynn.html
+
+if you view it in a browser you will see that it shows a series of hotel room names and their prices.
+
+Write code that extracts the rooom names and their corresponding price.
+
+Input: wynn.html
+Output: [ ["Resort Suite King", 151], ["Panoramic View King", 239], ....etc]
+
