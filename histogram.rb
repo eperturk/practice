@@ -1,21 +1,11 @@
-InitialArray = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4]
-Arraystring = InitialArray.to_s
-#count = InitialArray.count
-unique = InitialArray.uniq
-uniquecount = unique.count
+def initial(arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4])
+  arr_unique = arr.uniq
 
-object1 = InitialArray.rindex(1)
-object2 = InitialArray.rindex(2)
-object3 = InitialArray.rindex(3)
-object4 = InitialArray.rindex(4)
+  new_arr = []
+  arr_unique.each{ |number| new_arr << [number,arr.count(number)]}
+  p new_arr
+end
 
-count4 = object4 - object3
-count3 = object3 - object2
-count2 = object2 - object1 
-count1 = object1 - -1
-
-Histogram = [[unique[0], count1], [unique[1], count2], [unique[2], count3], [unique[3], count4]]
-
-print Histogram
+initial
 
 
