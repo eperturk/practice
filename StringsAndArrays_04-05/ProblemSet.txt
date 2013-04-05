@@ -1,0 +1,9 @@
+1.4 Write a method to replace all spaces in a string with '%20' (pg 73)
+
+18.7 Given a list of words, write a program to find the longest word made of other words in the list. (pg 168)
+EXAMPLE
+Input: cat, banana, dog, nana, walk, walker, dogwalker
+Output: dogwalker
+
+18.11 Imagine you have a square matrix, where each cell (pixel) is either black or white. Design an algorithm to find the maxiumum subsquare such that all four borders are filled with black pixels. (pg 168)
+
