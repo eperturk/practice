@@ -14,7 +14,7 @@ class StringAndArrayProblems
 			otherwords.each{|other_word|
 				current_word_count +=1 if (word.include?(other_word))
 			}
-			longword = word if current_word_count > count && word.length > length
+			longword = word if current_word_count > 1 && word.length > length
 			count = current_word_count
 			length = word.length
 		}
@@ -31,13 +31,22 @@ class StringAndArrayProblems
 			top_black_edge = adjacent_b(row)
 			top_black_edge.each{|edge|
 				#length of edge
-				length = edge[1] - edge[0] + 1
+				top_length = edge[1] - edge[0] + 1
+				length = top_length
 				#check left, right and bottom
 				left_array = matrix[row_index..matrix.count-1][edge[0]]
-				right_array = matrix[row_index..matrix.count-1][edge[1]]
-				adjacent_b(left_array)
-				adjacent_b(right_array)
+				left_edge = adjacent_b(left_array) # count the length here, if not equal, clip the right check end matrix
+				#left edge will never be nil since the first index is gauranted to be B
+				left_length = left_edge.first[1] - left_edge.first[0] + 1
+				length = left_length if left_length < top_length
+				
+				right_array = matrix[row_index..length+row_index - 1][edge[0] + length - 1]
+				right_edge = adjacent_b(right_array) #count the length here, if not equal, clip the bottom row check
+
+				#bottom edge is going to be on the row_index + (min (left_length,right_length))
 			}
+
+
 		}	
 	end #def end
 
